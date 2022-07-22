@@ -1,0 +1,31 @@
+{
+	"expo": {
+		"name": "Budget-Tracker",
+		"slug": "Budget-Tracker",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/bt_icon.png",
+		"userInterfaceStyle": "light",
+		"splash": {
+			"image": "./assets/bt_splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/bt_icon.png",
+				"backgroundColor": "#FFFFFF"
+			}
+		},
+		"web": {
+			"favicon": "./assets/bt_icon.png"
+		}
+	}
+}
