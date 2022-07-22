@@ -1,7 +1,11 @@
 import { ReactNode } from "react";
 import { ScrollView } from "react-native";
 
-const LongView = ({ children }: { children: ReactNode }) => {
+interface Props {
+	children: ReactNode;
+	style?: { alignItems?: string } | any;
+}
+const LongView = ({ children, style }: Props) => {
 	return (
 		<ScrollView
 			style={{
@@ -9,9 +13,7 @@ const LongView = ({ children }: { children: ReactNode }) => {
 				flexDirection: "column",
 				height: "100%",
 			}}
-			contentContainerStyle={{
-				alignItems: "center",
-			}}
+			contentContainerStyle={style}
 		>
 			{children}
 		</ScrollView>
