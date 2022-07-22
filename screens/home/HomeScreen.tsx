@@ -1,17 +1,17 @@
-import { Button, Text, View } from "react-native";
+import { Text } from "react-native";
+import LongView from "../../components/longview/LongView";
 
 const HomeScreen = () => {
 	return (
-		<View
+		<LongView
 			style={{
-				display: "flex",
-				height: "100%",
 				alignItems: "center",
-				justifyContent: "center",
+				backgroundColor: "green",
+				minHeight: 1500,
 			}}
 		>
 			<Text>Hello World</Text>
-		</View>
+		</LongView>
 	);
 };
 export default HomeScreen;
