@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import IonIcons from "react-native-vector-icons/Ionicons";
 
 const Header = () => {
@@ -10,10 +10,23 @@ const Header = () => {
 				display: "flex",
 				flexDirection: "row",
 				alignItems: "center",
+				paddingRight: 20,
 				paddingLeft: 20,
+				justifyContent: "space-between",
 			}}
 		>
-			<IonIcons name="grid" size={40} />
+			<Text
+				style={{
+					fontSize: 32,
+					fontWeight: "bold",
+				}}
+			>
+				Budget Tracker
+			</Text>
+
+			<TouchableOpacity style={{ marginTop: 5 }}>
+				<IonIcons name="grid" size={40} color="orange" />
+			</TouchableOpacity>
 		</View>
 	);
 };

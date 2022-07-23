@@ -4,10 +4,10 @@
 		"slug": "Budget-Tracker",
 		"version": "1.0.0",
 		"orientation": "portrait",
-		"icon": "./assets/bt_icon.png",
+		"icon": "./assets/images/bt_icon.png",
 		"userInterfaceStyle": "light",
 		"splash": {
-			"image": "./assets/bt_splash.png",
+			"image": "./assets/images/bt_splash.png",
 			"resizeMode": "contain",
 			"backgroundColor": "#ffffff"
 		},
@@ -20,12 +20,12 @@
 		},
 		"android": {
 			"adaptiveIcon": {
-				"foregroundImage": "./assets/bt_icon.png",
+				"foregroundImage": "./assets/images/bt_icon.png",
 				"backgroundColor": "#FFFFFF"
 			}
 		},
 		"web": {
-			"favicon": "./assets/bt_icon.png"
+			"favicon": "./assets/images/bt_icon.png"
 		}
 	}
 }
