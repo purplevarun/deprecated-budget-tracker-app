@@ -6,13 +6,14 @@ const Header = () => {
 		<View
 			style={{
 				height: 80,
-				backgroundColor: "red",
 				display: "flex",
 				flexDirection: "row",
 				alignItems: "center",
 				paddingRight: 20,
 				paddingLeft: 20,
 				justifyContent: "space-between",
+				borderBottomColor: "grey",
+				borderBottomWidth: 2,
 			}}
 		>
 			<Text
