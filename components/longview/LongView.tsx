@@ -6,13 +6,14 @@ interface Props {
 	style?: { alignItems?: string } | any;
 }
 const LongView = ({ children, style }: Props) => {
+	const paddingBottom = 120;
 	return (
 		<ScrollView
 			style={{
 				display: "flex",
 				flexDirection: "column",
 			}}
-			contentContainerStyle={style}
+			contentContainerStyle={{ ...style, paddingBottom }}
 		>
 			{children}
 		</ScrollView>
