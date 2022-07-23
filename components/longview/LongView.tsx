@@ -11,7 +11,6 @@ const LongView = ({ children, style }: Props) => {
 			style={{
 				display: "flex",
 				flexDirection: "column",
-				height: "100%",
 			}}
 			contentContainerStyle={style}
 		>
