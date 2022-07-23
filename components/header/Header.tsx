@@ -1,7 +1,10 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import useData from "../../context/useData";
 
 const Header = () => {
+	const { toggleMenu } = useData();
+
 	return (
 		<View
 			style={{
@@ -25,7 +28,7 @@ const Header = () => {
 				Budget Tracker
 			</Text>
 
-			<TouchableOpacity style={{ marginTop: 5 }}>
+			<TouchableOpacity style={{ marginTop: 5 }} onPress={toggleMenu}>
 				<Ionicons name="grid" size={40} color="orange" />
 			</TouchableOpacity>
 		</View>
