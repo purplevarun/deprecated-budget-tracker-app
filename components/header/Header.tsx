@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import IonIcons from "react-native-vector-icons/Ionicons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Header = () => {
 	return (
@@ -25,7 +25,7 @@ const Header = () => {
 			</Text>
 
 			<TouchableOpacity style={{ marginTop: 5 }}>
-				<IonIcons name="grid" size={40} color="orange" />
+				<Ionicons name="grid" size={40} color="orange" />
 			</TouchableOpacity>
 		</View>
 	);
