@@ -3,13 +3,13 @@ import { Animated, Text } from "react-native";
 import useData from "../../context/useData";
 
 const Menu = () => {
-	const { menuOpen, translateX } = useData();
+	const { menuOpen, translateX, menuWidth, colors } = useData();
 
 	const [width, setWidth] = useState(0);
 
 	useEffect(() => {
 		if (menuOpen) {
-			setWidth(150);
+			setWidth(menuWidth);
 		} else {
 			setTimeout(() => {
 				setWidth(0);
@@ -22,7 +22,7 @@ const Menu = () => {
 			style={{
 				display: "flex",
 				flexDirection: "column",
-				backgroundColor: "red",
+				backgroundColor: colors.primary,
 				height: "100%",
 				width,
 				alignItems: "center",

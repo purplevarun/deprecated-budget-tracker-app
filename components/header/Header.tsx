@@ -3,7 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import useData from "../../context/useData";
 
 const Header = () => {
-	const { toggleMenu } = useData();
+	const { toggleMenu, menuOpen, colors } = useData();
 
 	return (
 		<View
@@ -15,8 +15,9 @@ const Header = () => {
 				paddingRight: 20,
 				paddingLeft: 20,
 				justifyContent: "space-between",
-				borderBottomColor: "grey",
+				backgroundColor: colors.primary,
 				borderBottomWidth: 2,
+				borderBottomColor: menuOpen ? colors.fg : colors.primary,
 			}}
 		>
 			<Text
@@ -29,7 +30,11 @@ const Header = () => {
 			</Text>
 
 			<TouchableOpacity style={{ marginTop: 5 }} onPress={toggleMenu}>
-				<Ionicons name="grid" size={40} color="orange" />
+				{menuOpen ? (
+					<Ionicons name="grid" size={40} color={colors.fg} />
+				) : (
+					<Ionicons name="grid-outline" size={40} color={colors.fg} />
+				)}
 			</TouchableOpacity>
 		</View>
 	);
