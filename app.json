@@ -9,7 +9,7 @@
 		"splash": {
 			"image": "./assets/images/bt_splash.png",
 			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
+			"backgroundColor": "#FF9900"
 		},
 		"updates": {
 			"fallbackToCacheTimeout": 0
