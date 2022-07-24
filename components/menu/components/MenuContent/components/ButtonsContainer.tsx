@@ -1,4 +1,5 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
+import Button from "./Button";
 
 const ButtonsContainer = () => {
 	return (
@@ -9,13 +10,8 @@ const ButtonsContainer = () => {
 				alignItems: "center",
 			}}
 		>
-			<TouchableOpacity>
-				<Text>Home</Text>
-			</TouchableOpacity>
-
-			<TouchableOpacity>
-				<Text>My Trips</Text>
-			</TouchableOpacity>
+			<Button text="Home" />
+			<Button text="My Trips" />
 		</View>
 	);
 };

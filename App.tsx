@@ -4,11 +4,11 @@ import Wrapper from "./navigator/Wrapper";
 
 const App = () => {
 	return (
-		<ContextProvider>
-			<NavigationContainer>
+		<NavigationContainer>
+			<ContextProvider>
 				<Wrapper />
-			</NavigationContainer>
-		</ContextProvider>
+			</ContextProvider>
+		</NavigationContainer>
 	);
 };
 export default App;

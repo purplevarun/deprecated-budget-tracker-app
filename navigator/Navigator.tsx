@@ -8,7 +8,7 @@ const Navigator = () => {
 		<Stack.Navigator
 			screenOptions={{
 				headerShown: false,
-				animation: "flip",
+				animation: "fade",
 			}}
 			initialRouteName="Home"
 		>
