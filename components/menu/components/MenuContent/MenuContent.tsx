@@ -1,5 +1,6 @@
 import { Text, View } from "react-native";
 import useData from "../../../../context/useData";
+import Tagline from "./Tagline";
 
 const MenuContent = () => {
 	const { colors } = useData();
@@ -14,16 +15,7 @@ const MenuContent = () => {
 				backgroundColor: "magenta",
 			}}
 		>
-			<Text
-				style={{
-					fontSize: 18,
-					fontWeight: "500",
-					color: colors.green,
-					marginBottom: 30,
-				}}
-			>
-				Keep track of your money
-			</Text>
+			<Tagline />
 			<View>
 				<Text>hey</Text>
 			</View>
