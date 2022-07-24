@@ -2,13 +2,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 
 interface UserProps {
-	email: string;
-	img: string;
+	username: string;
 }
 
 const UserData = () => {
 	const [user, setUser] = useState<null | UserProps>(null);
 	const saveUser = async (newData: UserProps) => {
+		setUser(newData);
 		await AsyncStorage.setItem("user", JSON.stringify(newData));
 	};
 
