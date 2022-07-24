@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import useData from "../../../context/useData";
+import useData from "../../../../context/useData";
 
 const MenuContent = () => {
 	const { colors } = useData();

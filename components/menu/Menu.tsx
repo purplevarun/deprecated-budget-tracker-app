@@ -1,6 +1,6 @@
-import Contacts from "./components/Contacts";
-import MenuContainer from "./components/MenuContainer";
-import MenuContent from "./components/MenuContent";
+import Contacts from "./components/Contacts/Contacts";
+import MenuContainer from "./components/MenuContainer/MenuContainer";
+import MenuContent from "./components/MenuContent/MenuContent";
 const Menu = () => {
 	return (
 		<MenuContainer>
