@@ -1,10 +1,8 @@
-import { Text, View } from "react-native";
-import useData from "../../../../context/useData";
+import { View } from "react-native";
+import ButtonsContainer from "./components/ButtonsContainer";
 import Tagline from "./Tagline";
 
 const MenuContent = () => {
-	const { colors } = useData();
-
 	return (
 		<View
 			style={{
@@ -12,13 +10,10 @@ const MenuContent = () => {
 				display: "flex",
 				flexDirection: "column",
 				alignItems: "center",
-				backgroundColor: "magenta",
 			}}
 		>
 			<Tagline />
-			<View>
-				<Text>hey</Text>
-			</View>
+			<ButtonsContainer />
 		</View>
 	);
 };

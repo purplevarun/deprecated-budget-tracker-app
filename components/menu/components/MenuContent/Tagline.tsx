@@ -9,7 +9,7 @@ const Tagline = () => {
 				fontSize: 18,
 				fontWeight: "500",
 				color: colors.green,
-				marginBottom: 30,
+				marginBottom: 100,
 			}}
 		>
 			Keep track of your money
