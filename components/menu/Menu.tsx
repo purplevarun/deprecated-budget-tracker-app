@@ -1,14 +1,10 @@
-import { Text, View } from "react-native";
 import Contacts from "./components/Contacts";
 import MenuContainer from "./components/MenuContainer";
+import MenuContent from "./components/MenuContent";
 const Menu = () => {
 	return (
 		<MenuContainer>
-			<View>
-				<Text>hello</Text>
-				<Text>sadhsaui</Text>
-				<Text>safdmnsa</Text>
-			</View>
+			<MenuContent />
 			<Contacts />
 		</MenuContainer>
 	);
