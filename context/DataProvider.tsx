@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Animated } from "react-native";
+import colors from "./Colors";
 
 const DataProvider = () => {
 	const menuWidth = 250;
@@ -21,13 +22,6 @@ const DataProvider = () => {
 				useNativeDriver: true,
 			}).start();
 		}
-	};
-
-	const colors = {
-		primary: "#FF9900",
-		secondary: "#FEBD69",
-		bg: "white",
-		fg: "#131A22",
 	};
 
 	return {
