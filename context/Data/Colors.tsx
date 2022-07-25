@@ -4,5 +4,6 @@ const colors = {
 	bg: "white",
 	fg: "#131A22",
 	green: "darkgreen",
+	grey: "grey",
 };
 export default colors;
