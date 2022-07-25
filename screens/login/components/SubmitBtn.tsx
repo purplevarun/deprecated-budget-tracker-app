@@ -3,12 +3,11 @@ import colors from "../../../context/Data/Colors";
 import useData from "../../../context/useData";
 
 const SubmitBtn = () => {
-	const { saveUser, user } = useData();
-
-	const handlePress = () => {
-		saveUser({ username: "purplevarun" });
-		console.log(user);
+	const { loginText } = useData();
+	const disabled = () => {
+		return loginText.length < 1;
 	};
+	const handlePress = () => {};
 
 	return (
 		<TouchableOpacity
@@ -19,9 +18,10 @@ const SubmitBtn = () => {
 				marginTop: 30,
 				borderColor: colors.secondary,
 				borderWidth: 5,
-				backgroundColor: colors.primary,
+				backgroundColor: disabled() ? colors.grey : colors.primary,
 				borderRadius: 8,
 			}}
+			disabled={disabled()}
 		>
 			<Text
 				style={{

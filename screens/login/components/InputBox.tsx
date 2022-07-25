@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { TextInput } from "react-native";
 import colors from "../../../context/Data/Colors";
+import useData from "../../../context/useData";
 
 const InputBox = () => {
-	const [text, setText] = useState("");
-	const handleChange = (newText: string) => setText(newText);
+	const { loginText, handleLoginTextChange } = useData();
 	return (
 		<TextInput
 			multiline={false}
@@ -19,8 +18,8 @@ const InputBox = () => {
 				width: 300,
 				padding: 10,
 			}}
-			value={text}
-			onChangeText={handleChange}
+			value={loginText}
+			onChangeText={handleLoginTextChange}
 			selectionColor={colors.primary}
 		/>
 	);
