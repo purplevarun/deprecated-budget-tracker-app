@@ -3,7 +3,7 @@ import InputBox from "./components/InputBox";
 import LoginContainer from "./components/LoginContainer";
 import SubmitBtn from "./components/SubmitBtn";
 
-const LoginScreen = () => {
+const EnterUsernameScreen = () => {
 	return (
 		<LoginContainer>
 			<Description />
@@ -13,4 +13,4 @@ const LoginScreen = () => {
 	);
 };
 
-export default LoginScreen;
+export default EnterUsernameScreen;

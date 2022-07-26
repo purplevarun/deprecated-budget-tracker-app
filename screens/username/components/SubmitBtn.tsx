@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../../../context/Data/Colors";
 import useData from "../../../context/useData";
@@ -7,7 +8,20 @@ const SubmitBtn = () => {
 	const disabled = () => {
 		return loginText.length < 1;
 	};
-	const handlePress = () => {};
+
+	const userExists = async () => {
+		const url = `https://purplevarun-nodejs-server.herokuapp.com/budget-tracker/get-user?username=${loginText}`;
+		const { data } = await axios.get(url);
+		console.log(data);
+		return data.docs.length > 0;
+	};
+
+	const handlePress = async () => {
+		console.log("pressed submit btn");
+		const user = await userExists();
+		if (user) {
+		}
+	};
 
 	return (
 		<TouchableOpacity
