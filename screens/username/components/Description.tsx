@@ -1,11 +1,7 @@
 import { Text } from "react-native";
 
-const Description = () => {
-	return (
-		<Text style={{ marginBottom: 20, fontSize: 20 }}>
-			Enter your username or email
-		</Text>
-	);
+const Description = ({ text }: { text: string }) => {
+	return <Text style={{ marginBottom: 20, fontSize: 20 }}>{text}</Text>;
 };
 
 export default Description;

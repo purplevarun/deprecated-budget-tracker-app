@@ -7,13 +7,18 @@ import SubmitBtn from "./components/SubmitBtn";
 
 const EnterUsernameScreen = () => {
 	const [loader, showLoader] = useState(false);
-	const btnProps = { showLoader };
 
+	const [loginText, setLoginText] = useState("");
+	const handleLoginTextChange = (newText: string) => setLoginText(newText);
+
+	const inputProps = { loginText, handleLoginTextChange };
+
+	const btnProps = { showLoader, loginText };
 	return (
 		<LoginContainer>
 			{loader && <Loader />}
-			<Description />
-			<InputBox />
+			<Description text="Enter your username or email" />
+			<InputBox {...inputProps} />
 			<SubmitBtn {...btnProps} />
 		</LoginContainer>
 	);

@@ -1,16 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
-import axios from "axios";
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../../../context/Data/Colors";
-import useData from "../../../context/useData";
 import getUser from "../helpers/getUser";
 
 interface Props {
+	loginText: string;
 	showLoader: (value: boolean) => void;
 }
 
-const SubmitBtn = ({ showLoader }: Props) => {
-	const { loginText } = useData();
+const SubmitBtn = ({ showLoader, loginText }: Props) => {
 	const disabled = () => {
 		return loginText.length < 1;
 	};
@@ -22,7 +20,7 @@ const SubmitBtn = ({ showLoader }: Props) => {
 		const user = await getUser(loginText);
 		showLoader(false);
 		if (user.exists) {
-			navigation.navigate("Login" as never);
+			navigation.navigate("Login" as never, { userdata: user.data } as never);
 		} else {
 			navigation.navigate("Register" as never);
 		}

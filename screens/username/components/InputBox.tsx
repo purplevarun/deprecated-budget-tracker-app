@@ -2,8 +2,12 @@ import { TextInput } from "react-native";
 import colors from "../../../context/Data/Colors";
 import useData from "../../../context/useData";
 
-const InputBox = () => {
-	const { loginText, handleLoginTextChange } = useData();
+interface Props {
+	loginText: string;
+	handleLoginTextChange: (newText: string) => void;
+}
+
+const InputBox = ({ loginText, handleLoginTextChange }: Props) => {
 	return (
 		<TextInput
 			multiline={false}
