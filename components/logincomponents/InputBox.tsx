@@ -4,14 +4,21 @@ import colors from "../../context/Data/Colors";
 interface Props {
 	text: string;
 	handleTextChange: (newText: string) => void;
+	keyboardType: any;
+	maxLength: number;
 }
 
-const InputBox = ({ text, handleTextChange }: Props) => {
+const InputBox = ({
+	keyboardType,
+	text,
+	handleTextChange,
+	maxLength,
+}: Props) => {
 	return (
 		<TextInput
 			multiline={false}
 			autoCorrect={false}
-			maxLength={15}
+			maxLength={maxLength}
 			style={{
 				fontSize: 30,
 				borderWidth: 5,
@@ -25,6 +32,7 @@ const InputBox = ({ text, handleTextChange }: Props) => {
 			value={text}
 			onChangeText={handleTextChange}
 			selectionColor={colors.primary}
+			keyboardType={keyboardType}
 		/>
 	);
 };

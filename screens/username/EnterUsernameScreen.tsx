@@ -19,6 +19,8 @@ const EnterUsernameScreen = () => {
 	const inputProps = {
 		text,
 		handleTextChange,
+		keyboardType: "default",
+		maxLength: 14,
 	};
 
 	const handlePress = async () => {
@@ -28,7 +30,7 @@ const EnterUsernameScreen = () => {
 		if (user.exists) {
 			navigation.navigate("Login" as never, { userdata: user.data } as never);
 		} else {
-			navigation.navigate("Register" as never);
+			navigation.navigate("Register" as never, { username: text } as never);
 		}
 	};
 

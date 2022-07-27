@@ -1,5 +1,6 @@
 import { View } from "react-native";
 import ButtonsContainer from "./components/ButtonsContainer";
+import WelcomeUser from "./components/WelcomeUser";
 import Tagline from "./Tagline";
 
 const MenuContent = () => {
@@ -13,6 +14,7 @@ const MenuContent = () => {
 			}}
 		>
 			<Tagline />
+			<WelcomeUser />
 			<ButtonsContainer />
 		</View>
 	);

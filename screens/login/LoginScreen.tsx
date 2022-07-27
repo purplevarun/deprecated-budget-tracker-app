@@ -15,7 +15,7 @@ interface Props {
 			userdata: [
 				{
 					username: string;
-					pin: number;
+					pin: string;
 				}
 			];
 		};
@@ -30,14 +30,19 @@ const LoginScreen = ({ route }: Props) => {
 	const [pin, setPin] = useState("");
 	const handlePinChange = (newPin: string) => setPin(newPin);
 
-	const inputProps = { text: pin, handleTextChange: handlePinChange };
+	const inputProps = {
+		text: pin,
+		handleTextChange: handlePinChange,
+		keyboardType: "numeric",
+		maxLength: 4,
+	};
 
 	const { saveUser } = useData();
 
 	const navigation = useNavigation();
 
 	const handlePress = async () => {
-		if (user.pin === parseInt(pin)) {
+		if (user.pin === pin) {
 			showError(false);
 			showLoader(true);
 			saveUser({ username: user.username });
