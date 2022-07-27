@@ -2,7 +2,7 @@ import { View } from "react-native";
 import colors from "../../context/Data/Colors";
 import useData from "../../context/useData";
 import BrandName from "./components/BrandName";
-import MenuButton from "./components/menubutton";
+import MenuButton from "./components/MenuButton";
 
 const Header = () => {
 	const { menuOpen, user } = useData();

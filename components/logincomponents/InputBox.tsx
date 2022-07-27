@@ -2,11 +2,11 @@ import { TextInput } from "react-native";
 import colors from "../../context/Data/Colors";
 
 interface Props {
-	loginText: string;
-	handleLoginTextChange: (newText: string) => void;
+	text: string;
+	handleTextChange: (newText: string) => void;
 }
 
-const InputBox = ({ loginText, handleLoginTextChange }: Props) => {
+const InputBox = ({ text, handleTextChange }: Props) => {
 	return (
 		<TextInput
 			multiline={false}
@@ -21,8 +21,8 @@ const InputBox = ({ loginText, handleLoginTextChange }: Props) => {
 				width: 300,
 				padding: 10,
 			}}
-			value={loginText}
-			onChangeText={handleLoginTextChange}
+			value={text}
+			onChangeText={handleTextChange}
 			selectionColor={colors.primary}
 		/>
 	);

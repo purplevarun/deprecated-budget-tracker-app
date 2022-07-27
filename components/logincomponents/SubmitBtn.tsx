@@ -1,29 +1,14 @@
-import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../../context/Data/Colors";
-import getUser from "../../screens/username/helpers/getUser";
 
 interface Props {
-	loginText: string;
-	showLoader: (value: boolean) => void;
+	text: string;
+	handlePress: () => void;
 }
 
-const SubmitBtn = ({ showLoader, loginText }: Props) => {
+const SubmitBtn = ({ text, handlePress }: Props) => {
 	const disabled = () => {
-		return loginText.length < 1;
-	};
-
-	const navigation = useNavigation();
-
-	const handlePress = async () => {
-		showLoader(true);
-		const user = await getUser(loginText);
-		showLoader(false);
-		if (user.exists) {
-			navigation.navigate("Login" as never, { userdata: user.data } as never);
-		} else {
-			navigation.navigate("Register" as never);
-		}
+		return text.length < 1;
 	};
 
 	return (
