@@ -4,6 +4,7 @@ const colors = {
 	bg: "white",
 	fg: "#131A22",
 	green: "darkgreen",
+	lightgreen: "green",
 	grey: "grey",
 	red: "red",
 };
