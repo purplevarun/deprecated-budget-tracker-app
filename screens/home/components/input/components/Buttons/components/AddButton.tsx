@@ -1,7 +1,11 @@
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../../../../../../../context/Data/Colors";
 
-const AddButton = () => {
+interface Props {
+	disabled: () => boolean;
+}
+
+const AddButton = ({ disabled }: Props) => {
 	return (
 		<TouchableOpacity
 			style={{
@@ -9,8 +13,11 @@ const AddButton = () => {
 				padding: 10,
 				borderRadius: 8,
 			}}
+			disabled={disabled()}
 		>
-			<Text style={{ fontSize: 25, color: colors.bg }}>Add</Text>
+			<Text style={{ fontSize: 25, color: disabled() ? colors.fg : colors.bg }}>
+				Add
+			</Text>
 		</TouchableOpacity>
 	);
 };

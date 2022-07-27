@@ -1,7 +1,16 @@
 import { TextInput } from "react-native";
 import colors from "../../../../../context/Data/Colors";
 
-const AmountInput = () => {
+interface Props {
+	amount: string;
+	setAmount: (amt: string) => void;
+}
+
+const AmountInput = ({ amount, setAmount }: Props) => {
+	const handleChange = (newAmt: string) => {
+		setAmount(newAmt);
+	};
+
 	return (
 		<TextInput
 			placeholder="Amount"
@@ -17,6 +26,8 @@ const AmountInput = () => {
 				marginTop: 20,
 			}}
 			keyboardType="number-pad"
+			value={amount}
+			onChangeText={handleChange}
 		/>
 	);
 };

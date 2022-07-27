@@ -1,7 +1,10 @@
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../../../../../../../context/Data/Colors";
 
-const SubtractButton = () => {
+interface Props {
+	disabled: () => boolean;
+}
+const SubtractButton = ({ disabled }: Props) => {
 	return (
 		<TouchableOpacity
 			style={{
@@ -9,8 +12,11 @@ const SubtractButton = () => {
 				padding: 10,
 				borderRadius: 8,
 			}}
+			disabled={disabled()}
 		>
-			<Text style={{ fontSize: 25, color: colors.bg }}>Subtract</Text>
+			<Text style={{ fontSize: 25, color: disabled() ? colors.fg : colors.bg }}>
+				Subtract
+			</Text>
 		</TouchableOpacity>
 	);
 };

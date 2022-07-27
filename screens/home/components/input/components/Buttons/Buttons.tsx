@@ -4,11 +4,17 @@ import AddButton from "./components/AddButton";
 import InputButtonsContainer from "./components/InputButtonsContainer";
 import SubtractButton from "./components/SubtractButton";
 
-const Buttons = () => {
+const Buttons = ({ amount, reason }: { amount: string; reason: string }) => {
+	const disabled = () => {
+		if (parseInt(amount) <= 0) return true;
+		if (reason.length <= 0) return true;
+		return false;
+	};
+	const props = { disabled };
 	return (
 		<InputButtonsContainer>
-			<AddButton />
-			<SubtractButton />
+			<AddButton {...props} />
+			<SubtractButton {...props} />
 		</InputButtonsContainer>
 	);
 };

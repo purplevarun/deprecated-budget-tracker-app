@@ -1,7 +1,16 @@
 import { TextInput } from "react-native";
 import colors from "../../../../../context/Data/Colors";
 
-const ReasonInput = () => {
+interface Props {
+	reason: string;
+	setReason: (rsn: string) => void;
+}
+
+const ReasonInput = ({ reason, setReason }: Props) => {
+	const handleChange = (newReason: string) => {
+		setReason(newReason);
+	};
+
 	return (
 		<TextInput
 			placeholder="Reason"
@@ -15,6 +24,8 @@ const ReasonInput = () => {
 				borderRadius: 8,
 			}}
 			multiline={true}
+			value={reason}
+			onChangeText={handleChange}
 		/>
 	);
 };
