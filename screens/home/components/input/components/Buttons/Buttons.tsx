@@ -31,6 +31,7 @@ const Buttons = ({ amount, reason, showLoader, toggleAdd }: Props) => {
 		};
 		showLoader(true);
 		await postBudget(newBudget);
+
 		showLoader(false);
 		toggleAdd();
 	};

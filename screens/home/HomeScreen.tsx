@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddBtn from "./components/AddBtn";
+import Transactions from "./components/budgets/Transactions";
 import HomeScreenContainer from "./components/HomeScreenContainer";
 import InputBudget from "./components/input/InputBudget";
 import TodaysDate from "./components/TodaysDate";
@@ -15,6 +16,7 @@ const HomeScreen = () => {
 			<AddBtn {...addProps} />
 			<TodaysDate />
 			{add && <InputBudget {...addProps} />}
+			<Transactions />
 		</HomeScreenContainer>
 	);
 };

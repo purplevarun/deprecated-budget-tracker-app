@@ -13,6 +13,7 @@ const AddBtn = ({ toggleAdd }: Props) => {
 				position: "absolute",
 				right: 35,
 				top: 650,
+				zIndex: 99,
 			}}
 			onPress={toggleAdd}
 		>
