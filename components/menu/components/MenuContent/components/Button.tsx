@@ -1,5 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity } from "react-native";
+import colors from "../../../../../context/Data/Colors";
 import useData from "../../../../../context/useData";
 
 interface Props {
@@ -7,11 +8,11 @@ interface Props {
 }
 
 const Button = ({ text }: Props) => {
-	const { colors, toggleMenu } = useData();
+	const { toggleMenu } = useData();
 	const navigation = useNavigation();
 	const handlePress = () => {
 		toggleMenu();
-		navigation.navigate(text);
+		navigation.navigate(text as never);
 	};
 	return (
 		<TouchableOpacity

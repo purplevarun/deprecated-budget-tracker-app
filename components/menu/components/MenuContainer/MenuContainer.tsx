@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Animated } from "react-native";
+import colors from "../../../../context/Data/Colors";
 import useData from "../../../../context/useData";
 
 const MenuContainer = ({ children }: { children: any }) => {
-	const { menuOpen, translateX, menuWidth, colors } = useData();
+	const { menuOpen, translateX, menuWidth } = useData();
 	const [width, setWidth] = useState(0);
 
 	useEffect(() => {

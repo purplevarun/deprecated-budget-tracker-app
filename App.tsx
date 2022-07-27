@@ -1,12 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import ContextProvider from "./context/ContextProvider";
-import Wrapper from "./navigator/Wrapper";
+import AppContainer from "./navigator/AppContainer";
 
 const App = () => {
 	return (
 		<NavigationContainer>
 			<ContextProvider>
-				<Wrapper />
+				<AppContainer />
 			</ContextProvider>
 		</NavigationContainer>
 	);

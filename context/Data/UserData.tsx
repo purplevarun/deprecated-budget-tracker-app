@@ -6,7 +6,7 @@ interface UserProps {
 }
 
 const UserData = () => {
-	const [user, setUser] = useState<null | UserProps>(null);
+	const [user, setUser] = useState<null | UserProps>();
 	const saveUser = async (newData: UserProps) => {
 		setUser(newData);
 		await AsyncStorage.setItem("user", JSON.stringify(newData));

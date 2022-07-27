@@ -4,16 +4,18 @@ import EnterUsernameScreen from "../screens/username/EnterUsernameScreen";
 import TripsScreen from "../screens/trips/TripsScreen";
 import LoginScreen from "../screens/login/LoginScreen";
 import RegisterScreen from "../screens/register/RegisterScreen";
+import useData from "../context/useData";
 
 const Navigator = () => {
 	const Stack = createNativeStackNavigator();
+	const { user } = useData();
 	return (
 		<Stack.Navigator
 			screenOptions={{
 				headerShown: false,
 				animation: "fade",
 			}}
-			initialRouteName="Home"
+			initialRouteName={user ? "Home" : "EnterUsername"}
 		>
 			{/* public screens */}
 			<Stack.Screen name="Home" component={HomeScreen} />

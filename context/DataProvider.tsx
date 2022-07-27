@@ -1,4 +1,3 @@
-import colors from "./Data/Colors";
 import LoginData from "./Data/LoginData";
 import MenuData from "./Data/MenuData";
 import UserData from "./Data/UserData";
@@ -11,7 +10,6 @@ const DataProvider = () => {
 		...menuData,
 		...userData,
 		...loginData,
-		colors,
 	};
 };
 

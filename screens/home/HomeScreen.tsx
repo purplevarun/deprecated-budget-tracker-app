@@ -1,9 +1,8 @@
 import { Text } from "react-native";
 import LongView from "../../components/longview/LongView";
-import useData from "../../context/useData";
+import colors from "../../context/Data/Colors";
 
 const HomeScreen = () => {
-	const { colors } = useData();
 	return (
 		<LongView
 			style={{

@@ -1,9 +1,11 @@
-import { Text, TouchableOpacity, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { View } from "react-native";
+import colors from "../../context/Data/Colors";
 import useData from "../../context/useData";
+import BrandName from "./components/BrandName";
+import MenuButton from "./components/menubutton";
 
 const Header = () => {
-	const { toggleMenu, menuOpen, colors } = useData();
+	const { menuOpen, user } = useData();
 
 	return (
 		<View
@@ -20,22 +22,8 @@ const Header = () => {
 				borderBottomColor: menuOpen ? colors.fg : colors.primary,
 			}}
 		>
-			<Text
-				style={{
-					fontSize: 32,
-					fontWeight: "bold",
-				}}
-			>
-				Budget Tracker
-			</Text>
-
-			<TouchableOpacity style={{ marginTop: 5 }} onPress={toggleMenu}>
-				{menuOpen ? (
-					<Ionicons name="grid" size={40} color={colors.fg} />
-				) : (
-					<Ionicons name="grid-outline" size={40} color={colors.fg} />
-				)}
-			</TouchableOpacity>
+			<BrandName />
+			{user && <MenuButton />}
 		</View>
 	);
 };

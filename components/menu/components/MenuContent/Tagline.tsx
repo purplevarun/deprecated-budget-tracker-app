@@ -1,8 +1,6 @@
 import { Text } from "react-native";
-import useData from "../../../../context/useData";
+import colors from "../../../../context/Data/Colors";
 const Tagline = () => {
-	const { colors } = useData();
-
 	return (
 		<Text
 			style={{

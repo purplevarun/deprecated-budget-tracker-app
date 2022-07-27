@@ -1,10 +1,8 @@
 import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Linking, Text, TouchableOpacity, View } from "react-native";
-import useData from "../../../../context/useData";
+import colors from "../../../../context/Data/Colors";
 
 const Contacts = () => {
-	const { colors } = useData();
-
 	return (
 		<View
 			style={{

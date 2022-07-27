@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../../../context/Data/Colors";
@@ -9,7 +10,9 @@ const SubmitBtn = () => {
 		return loginText.length < 1;
 	};
 
-	const userExists = async () => {
+	const navigation = useNavigation();
+
+	const getUser = async () => {
 		const url = `https://purplevarun-nodejs-server.herokuapp.com/budget-tracker/get-user?username=${loginText}`;
 		const { data } = await axios.get(url);
 		console.log(data);
@@ -18,8 +21,11 @@ const SubmitBtn = () => {
 
 	const handlePress = async () => {
 		console.log("pressed submit btn");
-		const user = await userExists();
-		if (user) {
+		const userExists = await getUser();
+		if (userExists) {
+			navigation.navigate("Login" as never);
+		} else {
+			navigation.navigate("Register" as never);
 		}
 	};
 
