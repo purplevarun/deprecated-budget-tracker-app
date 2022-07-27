@@ -4,7 +4,11 @@ import { Text, TouchableOpacity } from "react-native";
 import colors from "../../../context/Data/Colors";
 import useData from "../../../context/useData";
 
-const SubmitBtn = () => {
+interface Props {
+	showLoader: (value: boolean) => void;
+}
+
+const SubmitBtn = ({ showLoader }: Props) => {
 	const { loginText } = useData();
 	const disabled = () => {
 		return loginText.length < 1;
@@ -16,13 +20,17 @@ const SubmitBtn = () => {
 		const url = `https://purplevarun-nodejs-server.herokuapp.com/budget-tracker/get-user?username=${loginText}`;
 		const { data } = await axios.get(url);
 		console.log(data);
-		return data.docs.length > 0;
+		return {
+			exists: data.docs.length > 0,
+			data: data.docs,
+		};
 	};
 
 	const handlePress = async () => {
-		console.log("pressed submit btn");
-		const userExists = await getUser();
-		if (userExists) {
+		showLoader(true);
+		const user = await getUser();
+		showLoader(false);
+		if (user.exists) {
 			navigation.navigate("Login" as never);
 		} else {
 			navigation.navigate("Register" as never);
