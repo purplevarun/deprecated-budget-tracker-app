@@ -1,6 +1,5 @@
 import { TextInput } from "react-native";
-import colors from "../../../context/Data/Colors";
-import useData from "../../../context/useData";
+import colors from "../../context/Data/Colors";
 
 interface Props {
 	loginText: string;

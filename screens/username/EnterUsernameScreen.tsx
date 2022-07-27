@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Loader from "../../components/loader/Loader";
-import Description from "./components/Description";
-import InputBox from "./components/InputBox";
-import LoginContainer from "./components/LoginContainer";
-import SubmitBtn from "./components/SubmitBtn";
+import Description from "../../components/logincomponents/Description";
+import InputBox from "../../components/logincomponents/InputBox";
+import LoginContainer from "../../components/logincomponents/LoginContainer";
+import SubmitBtn from "../../components/logincomponents/SubmitBtn";
 
 const EnterUsernameScreen = () => {
 	const [loader, showLoader] = useState(false);

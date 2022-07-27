@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Text, View } from "react-native";
 import Loader from "../../components/loader/Loader";
-import LoginContainer from "../username/components/LoginContainer";
+import LoginContainer from "../../components/logincomponents/LoginContainer";
 
 interface Props {
 	route: {

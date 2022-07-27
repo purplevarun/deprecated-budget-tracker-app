@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity } from "react-native";
-import colors from "../../../context/Data/Colors";
-import getUser from "../helpers/getUser";
+import colors from "../../context/Data/Colors";
+import getUser from "../../screens/username/helpers/getUser";
 
 interface Props {
 	loginText: string;

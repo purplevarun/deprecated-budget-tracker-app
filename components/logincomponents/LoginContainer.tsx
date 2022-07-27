@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import colors from "../../../context/Data/Colors";
+import colors from "../../context/Data/Colors";
 
 const LoginContainer = ({ children }: { children: any }) => {
 	return (
