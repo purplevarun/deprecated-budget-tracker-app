@@ -9,6 +9,7 @@ import useData from "../context/useData";
 const Navigator = () => {
 	const Stack = createNativeStackNavigator();
 	const { user } = useData();
+
 	return (
 		<Stack.Navigator
 			screenOptions={{

@@ -20,6 +20,7 @@ const InputBox = ({ text, handleTextChange }: Props) => {
 				height: 60,
 				width: 300,
 				padding: 10,
+				marginTop: 10,
 			}}
 			value={text}
 			onChangeText={handleTextChange}

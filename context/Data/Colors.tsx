@@ -5,5 +5,6 @@ const colors = {
 	fg: "#131A22",
 	green: "darkgreen",
 	grey: "grey",
+	red: "red",
 };
 export default colors;
