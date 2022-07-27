@@ -3,6 +3,7 @@ import axios from "axios";
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../../../context/Data/Colors";
 import useData from "../../../context/useData";
+import getUser from "../helpers/getUser";
 
 interface Props {
 	showLoader: (value: boolean) => void;
@@ -16,19 +17,9 @@ const SubmitBtn = ({ showLoader }: Props) => {
 
 	const navigation = useNavigation();
 
-	const getUser = async () => {
-		const url = `https://purplevarun-nodejs-server.herokuapp.com/budget-tracker/get-user?username=${loginText}`;
-		const { data } = await axios.get(url);
-		console.log(data);
-		return {
-			exists: data.docs.length > 0,
-			data: data.docs,
-		};
-	};
-
 	const handlePress = async () => {
 		showLoader(true);
-		const user = await getUser();
+		const user = await getUser(loginText);
 		showLoader(false);
 		if (user.exists) {
 			navigation.navigate("Login" as never);
