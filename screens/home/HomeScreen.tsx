@@ -14,7 +14,7 @@ const HomeScreen = () => {
 		<HomeScreenContainer>
 			<AddBtn {...addProps} />
 			<TodaysDate />
-			{add && <InputBudget />}
+			{add && <InputBudget {...addProps} />}
 		</HomeScreenContainer>
 	);
 };

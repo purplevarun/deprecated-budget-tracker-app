@@ -3,9 +3,10 @@ import colors from "../../../../../../../context/Data/Colors";
 
 interface Props {
 	disabled: () => boolean;
+	onPress: (type: "CREDIT" | "DEBIT") => void;
 }
 
-const AddButton = ({ disabled }: Props) => {
+const AddButton = ({ disabled, onPress }: Props) => {
 	return (
 		<TouchableOpacity
 			style={{
@@ -14,6 +15,7 @@ const AddButton = ({ disabled }: Props) => {
 				borderRadius: 8,
 			}}
 			disabled={disabled()}
+			onPress={() => onPress("CREDIT")}
 		>
 			<Text style={{ fontSize: 25, color: disabled() ? colors.fg : colors.bg }}>
 				Add

@@ -3,8 +3,9 @@ import colors from "../../../../../../../context/Data/Colors";
 
 interface Props {
 	disabled: () => boolean;
+	onPress: (type: "CREDIT" | "DEBIT") => void;
 }
-const SubtractButton = ({ disabled }: Props) => {
+const SubtractButton = ({ disabled, onPress }: Props) => {
 	return (
 		<TouchableOpacity
 			style={{
@@ -13,6 +14,7 @@ const SubtractButton = ({ disabled }: Props) => {
 				borderRadius: 8,
 			}}
 			disabled={disabled()}
+			onPress={() => onPress("DEBIT")}
 		>
 			<Text style={{ fontSize: 25, color: disabled() ? colors.fg : colors.bg }}>
 				Subtract
