@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import useData from "../../../../../../context/useData";
 import AddButton from "./components/AddButton";
 import InputButtonsContainer from "./components/InputButtonsContainer";
@@ -31,7 +32,12 @@ const Buttons = ({ amount, reason, showLoader, toggleAdd }: Props) => {
 		};
 		showLoader(true);
 		await postBudget(newBudget);
-
+		const localBudgets = JSON.parse(
+			(await AsyncStorage.getItem("budgets")) as string
+		);
+		const newLocalBudgets = localBudgets ? localBudgets : [];
+		newLocalBudgets.push(newBudget);
+		await AsyncStorage.setItem("budgets", JSON.stringify(newLocalBudgets));
 		showLoader(false);
 		toggleAdd();
 	};
